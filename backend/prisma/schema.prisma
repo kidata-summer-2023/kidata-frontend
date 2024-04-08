@@ -49,7 +49,6 @@ model Interaction {
   correct         Boolean?
   date            DateTime
   timeSinceLoad   Int
-
   question   Question? @relation(fields: [questionId], references: [id])
   questionId Int?
 
@@ -61,7 +60,7 @@ model Question {
   question         String
   answer           String
   options          String[]
-  questionAttempts Interaction[]
+  explanation      String[]
   page             Page          @relation(fields: [pageId], references: [id])
   pageId           Int
 }
